@@ -15,9 +15,6 @@ with open(election) as csvfile:
     vote_counter3 = 0
     vote_counter4 = 0
 
-    
-    
-    
     votedict = {
 
     }
@@ -49,7 +46,7 @@ with open(election) as csvfile:
     
 
     
-# i thought about using a dict but didnt get it to work
+# I thought about using a dict but didnt get it to work
     #votedict.update({ name1: vote_counter1, name2: vote_counter2, name3: vote_counter3, name4: vote_counter4})
     #winner = max(votedict)
     total_votes = vote_counter1 + vote_counter2 + vote_counter3 + vote_counter4
@@ -72,10 +69,10 @@ with open(election) as csvfile:
 
     print ("Total Votes: ", total_votes)
     print ("-" * 20)
-    print (name1 , per_vote1 , "%",vote_counter1)
-    print (name2 , per_vote2 , "%",vote_counter2)
-    print (name3 , per_vote3 , "%", vote_counter3)
-    print (name4 , per_vote4 , "%", vote_counter4)
+    print (name1 , round(per_vote1, 3) , "%",vote_counter1)
+    print (name2 , round(per_vote2,3) , "%",vote_counter2)
+    print (name3 , round(per_vote3,3) , "%", vote_counter3)
+    print (name4 , round(per_vote4,3) , "%", vote_counter4)
 
     print ("-" * 20)
     print("Winner is: ", winner)
