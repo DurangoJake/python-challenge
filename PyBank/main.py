@@ -3,7 +3,7 @@ import csv
 
 file =('budget_data.csv')
 
-output_path =('outputbudget.csv')
+output_path =("outputbudget.csv")
 
 with open(file) as csvfile:
 
@@ -59,8 +59,8 @@ with open (output_path, 'w') as csvfile:
 
     csvwriter = csv.writer(csvfile, delimiter=',')
 
-    writer.writerow = ([])
-    
+    csvwriter.writerow(['Total months: ','Total: $','Average Change: $', 'Greatest Increase in Profits: ','Greatest Decrease in Profits: ' ])
+    csvwriter.writerow([month_adder, x, totalchange, month_list[index_high], month_list[index_low] ])
 
         
        
