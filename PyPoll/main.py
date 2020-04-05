@@ -15,6 +15,9 @@ with open(election) as csvfile:
     vote_counter3 = 0
     vote_counter4 = 0
 
+    
+    
+    
     votedict = {
 
     }
@@ -23,6 +26,12 @@ with open(election) as csvfile:
     name2 = "Correy"
     name3 = "Li"
     name4 = "O'Tooley"
+
+
+    canidate = [name1, name2, name3, name4]
+    
+
+
 
     for row in csvreader:
         if name1 in row:
@@ -42,10 +51,17 @@ with open(election) as csvfile:
     
 # i thought about using a dict but didnt get it to work
     #votedict.update({ name1: vote_counter1, name2: vote_counter2, name3: vote_counter3, name4: vote_counter4})
-    #winner = max(votedict[1])
+    #winner = max(votedict)
     total_votes = vote_counter1 + vote_counter2 + vote_counter3 + vote_counter4
+    votes = [vote_counter1, vote_counter2, vote_counter3, vote_counter4]
     
-    #print (votedict[1])
+    winner_count = max(votes)
+    winner_index = votes.index(winner_count)
+    winner = canidate[winner_index]
+    print (winner_index)
+    print(votes)
+
+
     per_vote1 = (vote_counter1 / total_votes) * 100
     per_vote2 = (vote_counter2 / total_votes) * 100
     per_vote3 = (vote_counter3 / total_votes) * 100
