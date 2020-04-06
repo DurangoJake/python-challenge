@@ -3,7 +3,7 @@ import csv
 
 
 election =('election_data.csv')
-
+output_path =("election_output.csv")
 
 
 with open(election) as csvfile:
@@ -55,8 +55,8 @@ with open(election) as csvfile:
     winner_count = max(votes)
     winner_index = votes.index(winner_count)
     winner = canidate[winner_index]
-    print (winner_index)
-    print(votes)
+    #print (winner_index)
+    #print(votes)
 
 
     per_vote1 = (vote_counter1 / total_votes) * 100
@@ -77,6 +77,24 @@ with open(election) as csvfile:
     print ("-" * 20)
     print("Winner is: ", winner)
     
+
+
+
+with open (output_path, 'w') as csvfile:
+
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
+    csvwriter.writerow(['Election Results' ])
+    csvwriter.writerow(["-" * 10,"-" * 10, "-" * 10, "-" * 10] )
+    csvwriter.writerow(["Total Votes: ", total_votes])
+    csvwriter.writerow(["-" * 10,"-" * 10, "-" * 10, "-" * 10])
+    csvwriter.writerow([name1 , round(per_vote1, 3) , "%",vote_counter1])
+    csvwriter.writerow([name2 , round(per_vote2,3) , "%",vote_counter2])
+    csvwriter.writerow([name3 , round(per_vote3,3) , "%", vote_counter3])
+    csvwriter.writerow([name4 , round(per_vote4,3) , "%", vote_counter4])
+
+    csvwriter.writerow(["-" * 10, "-" * 10, "-" * 10, "-" * 10])
+    csvwriter.writerow(["Winner is: ", winner])
 
 
 
