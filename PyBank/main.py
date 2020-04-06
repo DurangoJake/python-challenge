@@ -61,9 +61,9 @@ with open (output_path, 'w') as csvfile:
 
     csvwriter.writerow(["Financial Analysis"])
     csvwriter.writerow(["-"*60])
-    csvwriter.writerow(["Total months: ", month_adder])
+    csvwriter.writerow(["Total months: " , month_adder])
     csvwriter.writerow(["Total: $",  x])
-    csvwriter.writerow(["Average Change: $", totalchange])
+    csvwriter.writerow(["Average Change: $" , totalchange])
     csvwriter.writerow(["Greatest Increase in Profits: ", month_list[index_high],  "($", high, ")"])
     csvwriter.writerow(["Greatest Decrease in Profits: ", month_list[index_low], "($", low, ")" ])
 
