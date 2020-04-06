@@ -49,7 +49,7 @@ with open(file) as csvfile:
     print ("-"*60)
     print ("Total months: ", month_adder)
     print ("Total: $",  x)
-    print ("Average Change: $", totalchange)
+    print ("Average Change: $", round(totalchange, 2))
     print("Greatest Increase in Profits: ", month_list[index_high],  "($",high , ")")
     print("Greatest Decrease in Profits: ", month_list[index_low], "($",low , ")" )
 
@@ -59,8 +59,13 @@ with open (output_path, 'w') as csvfile:
 
     csvwriter = csv.writer(csvfile, delimiter=',')
 
-    csvwriter.writerow(['Total months: ','Total: $','Average Change: $', 'Greatest Increase in Profits: ','Greatest Decrease in Profits: ' ])
-    csvwriter.writerow([month_adder, x, totalchange, month_list[index_high], month_list[index_low] ])
+    csvwriter.writerow(["Financial Analysis"])
+    csvwriter.writerow(["-"*60])
+    csvwriter.writerow(["Total months: ", month_adder])
+    csvwriter.writerow(["Total: $",  x])
+    csvwriter.writerow(["Average Change: $", totalchange])
+    csvwriter.writerow(["Greatest Increase in Profits: ", month_list[index_high],  "($", high, ")"])
+    csvwriter.writerow(["Greatest Decrease in Profits: ", month_list[index_low], "($", low, ")" ])
 
         
        
